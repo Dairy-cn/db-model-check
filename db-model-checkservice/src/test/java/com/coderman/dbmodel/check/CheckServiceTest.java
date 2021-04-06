@@ -68,11 +68,13 @@ public class CheckServiceTest {
 
     @Test
     public void testCheckTableService(){
+        //校验的数据库名称
         String dbName = "hebei_people_duties2_dev";
     
         List<MessageBean> list = checkTableService.checkTableInfo(dbName);
 
         try {
+            //检查结果文件地址
             messageToExcelService.writeToExcel(list,"D:\\result.xlsx");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
