@@ -1,0 +1,6 @@
+(id   BIGINT(11)  unsigned  NOT NULL  COMMENT "",
+account_name VARCHAR (100) NOT null default "" comment "账号",
+handphone VARCHAR (30) NOT null default "" comment "电话号码",
+nick_name varchar (100) NOT null default "" comment "昵称",
+PRIMARY KEY (id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 collate=utf8mb4_general_ci comment "用户表";

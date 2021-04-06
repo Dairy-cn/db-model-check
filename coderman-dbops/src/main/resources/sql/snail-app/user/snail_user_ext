@@ -1,0 +1,10 @@
+(user_id BIGINT(11)  unsigned  NOT NULL  COMMENT "",
+  is_new int(11) NOT NULL default  0 comment "是否是新用户",
+  head_image_url varchar(100) NOT NULL default "" comment "用户头像",
+  age int(11) not null default 0 comment "年龄",
+  current_city int(11) not null default 1 comment "所在城市id",
+  school_name varchar(100) not null default "" comment "毕业学校",
+  degree varchar(100) not null default "" comment "学历",
+  company varchar(1000) not null default  "" comment "所在公司",
+  PRIMARY KEY (user_id)
+)ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 collate=utf8mb4_general_ci comment "用户扩展表";

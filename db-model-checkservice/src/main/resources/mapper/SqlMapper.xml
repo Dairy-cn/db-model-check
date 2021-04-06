@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.coderman.dbmodel.check.mapper.SqlMapper">
+
+    <select id="getColumnBeanList" parameterType="java.lang.String" resultType="com.coderman.dbmodel.check.bean.ColumnBean" useCache="false">
+        SELECT TABLE_NAME AS tableName ,COLUMN_NAME columnName,
+          COLUMN_DEFAULT AS columnDefaultValue,DATA_TYPE AS dataType,
+         EXTRA AS extraInfo ,COLUMN_KEY AS columnKey,IS_NULLABLE AS isNullable,
+        COLUMN_TYPE AS columnType,COLUMN_COMMENT AS columnComment FROM information_schema.columns
+        WHERE TABLE_SCHEMA = #{dbName}
+    </select>
+
+    <select id="getDBTableBeanList" parameterType="java.lang.String" resultType="com.coderman.dbmodel.check.bean.TableBean" useCache="false">
+        SELECT  TABLE_NAME AS tableName,TABLE_COMMENT AS tableComment FROM information_schema.TABLES WHERE TABLE_SCHEMA = #{dbName}
+    </select>
+
+    <select id="getCount" parameterType="java.lang.String" resultType="java.lang.Integer">
+        ${value}
+    </select>
+
+</mapper>
